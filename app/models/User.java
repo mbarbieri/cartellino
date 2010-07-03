@@ -21,6 +21,8 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import play.data.validation.Email;
+import play.data.validation.Password;
 import play.data.validation.Required;
 import play.db.jpa.Model;
 
@@ -33,12 +35,22 @@ public class User extends Model {
 
     @Required
     public String name;
+
+    @Required
+    @Email
+    public String email;
+
+    @Required
+    @Password
+    public String password;
     
     @OneToMany(mappedBy="user",cascade=CascadeType.ALL)
     public List<Activity> activities = new ArrayList();
 
-    public User(String name) {
+    public User(String name,String email, String password) {
         this.name = name;
+        this.email = email;
+        this.password = password;
     }
 
     @Override

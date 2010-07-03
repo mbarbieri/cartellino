@@ -16,6 +16,7 @@
  */
 package controllers;
 
+import controllers.Secure.Security;
 import java.util.List;
 import models.*;
 import play.Logger;
@@ -26,13 +27,13 @@ import play.mvc.*;
  *
  * @author Matteo Barbieri <barbieri.matteo at gmail.com>
  */
+@With(Secure.class)
 public class Application extends Controller {
 
-    public static void index() {
-        // forced user
-        User utente = User.findById(1L);
-        List<Activity> activities = utente.activities;
-        render(activities);
+    public static void index() {     
+        User user = User.find("byEmail",Security.connected()).first();
+        List<Activity> activities = user.activities;
+        render(user,activities);
     }
 
     public static void stop(@Required String activityId) {

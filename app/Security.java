@@ -1,3 +1,7 @@
+
+import controllers.Secure;
+import models.User;
+
 /*
  *  Copyright (C) 2010 Matteo Barbieri <barbieri.matteo at gmail.com>
  * 
@@ -15,15 +19,15 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package controllers;
-
-import play.mvc.With;
-
 /**
  *
  * @author Matteo Barbieri <barbieri.matteo at gmail.com>
  */
-@With(Secure.class)
-public class Users extends CRUD {
-
+public class Security extends Secure.Security {
+    
+    static boolean authenticate(String email, String password) {
+        User user = User.find("byEmail", email).first();
+        return user != null && user.password.equals(password);
+    }
+    
 }

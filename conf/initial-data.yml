@@ -1,5 +1,7 @@
 User(bob):
   name:           Bob
+  email:          bob@example.org
+  password:       pwd
   
 Activity(test):
   name:           Test

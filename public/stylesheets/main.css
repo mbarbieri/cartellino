@@ -1,0 +1,61 @@
+body {
+    width: 800px;
+    margin: auto;
+    background: #343434;
+    font-family: Helvetica, Arial, Sans;
+    padding: 40px;
+}
+
+.activity {
+    float: left;
+    margin: 5px;
+    background: #fff;
+    -webkit-border-radius: 6px;
+    opacity: 1;
+    width: 250px;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    display: table;
+    position: static;
+    -webkit-box-shadow: 0 0 2px rgba(0,0,0,.5);
+    text-shadow: 0 0 6px rgba(255,255,255,.7);
+    font-size: 25px;
+    background: #90CB5F;
+}
+
+
+.active {
+    background: #E75152;
+}
+
+
+.activity a {
+    display: table-cell;
+    vertical-align: middle;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#counter {
+    border: none;
+    position:absolute;
+    margin-left: 90px;
+    -webkit-border-radius: 40px 40px 0px 0px;
+    bottom:0;
+    width:600px;
+    height:100px;   /* Height of the footer */
+    background:#6cf;
+}
+
+.countdown_holding span {
+	background-color:#6cf;
+}
+
+.countdown_section {
+	display: block;
+	float: left;
+	font-size: 1.5em;
+	text-align: center;
+}

@@ -1,0 +1,20 @@
+User(bob):
+  name:           Bob
+  
+Activity(test):
+  name:           Test
+  user:           bob
+Activity(debug):
+  name:           Debug
+  user:           bob
+Activity(features):
+  name:           Features
+  user:           bob
+Activity(write):
+  name:           Write
+  user:           bob
+Activity(sleep):
+  name:           Sleep
+  user:           bob
+
+

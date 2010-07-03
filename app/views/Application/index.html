@@ -1,0 +1,9 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{list items:activities, as:'activity'}
+<div class="activity">
+    <a class="button" href="#">${activity.name}</a>
+    <input type="hidden" name="activityId" value="${activity.id}"/>
+</div>
+#{/list}

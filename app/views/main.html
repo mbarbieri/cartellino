@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        
+        #{get 'moreStyles' /}
+        <link rel="stylesheet" href="@{'public/stylesheets/main.css'}" type="text/css">
+        <link rel="stylesheet" href="@{'public/stylesheets/jquery.countdown.css'}" type="text/css">
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+        <script src="@{'/public/javascripts/jquery-1.4.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public/javascripts/jquery.countdown.min.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public/javascripts/jquery.countdown-it.js'}" type="text/javascript" charset="utf-8"></script>
+        #{get 'moreScripts' /}
+        <script type="text/javascript" charset="utf-8">
+            var stopAction = #{jsAction @stop()/};
+            var startAction = #{jsAction @start()/};
+        </script>
+        <script src="@{'/public/javascripts/cartellino.js'}" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="content">
+            <div id="main">
+               #{doLayout /}
+            </div>
+            <div id="counter" style="display:none;"></div>
+        </div>
+    </body>
+</html>

@@ -16,6 +16,13 @@
         <script type="text/javascript" charset="utf-8">
             var stopAction = #{jsAction @stop()/};
             var startAction = #{jsAction @start()/};
+            #{if user.getActiveTimeSlice()}
+                var activeStartTime = ${user.getActiveTimeSlice().startTime.getTime()};
+            #{/if}
+            #{else}
+                var activeStartTime;
+            #{/else}
+            
         </script>
         <script src="@{'/public/javascripts/cartellino.js'}" type="text/javascript" charset="utf-8"></script>
     </head>

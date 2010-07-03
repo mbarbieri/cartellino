@@ -53,6 +53,11 @@ public class User extends Model {
         this.password = password;
     }
 
+    public TimeSlice getActiveTimeSlice() {
+        return TimeSlice.find("from TimeSlice tm where tm.activity.user = ? "
+                + "and endTime is null", this).first();
+    }
+
     @Override
     public String toString() {
         return name;

@@ -1,5 +1,11 @@
 $(document).ready(function(){
 
+    // Initialization
+    if(activeStartTime) {
+        $('#counter').countdown({since: new Date(activeStartTime), format: 'HMS'});
+        $('#counter').slideDown();
+    }
+
     stopTimeSlice = function(id) {
         $.post(stopAction(),{activityId: id});
     }

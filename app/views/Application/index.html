@@ -2,7 +2,13 @@
 #{set title:'Cartellino - ' + user.name /}
 
 #{list items:activities, as:'activity'}
+
+#{if activity.isActive() }
+<div class="activity active">
+#{/if}
+#{else}
 <div class="activity">
+#{/else}
     <a class="button" href="#">${activity.name}</a>
     <input type="hidden" name="activityId" value="${activity.id}"/>
 </div>

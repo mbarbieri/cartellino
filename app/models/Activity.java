@@ -49,6 +49,10 @@ public class Activity extends Model {
         return TimeSlice.find("byActivityAndEndTimeIsNull", this).first();
     }
 
+    public Boolean isActive() {
+        return TimeSlice.count("byActivityAndEndTimeIsNull", this) >= 1;
+    }
+
     public void stop() {
         TimeSlice tm = getActiveTimeSlice();
         tm.endTime = new Date();

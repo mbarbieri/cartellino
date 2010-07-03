@@ -25,6 +25,7 @@ import play.data.validation.Email;
 import play.data.validation.Password;
 import play.data.validation.Required;
 import play.db.jpa.Model;
+import play.libs.Crypto;
 
 /**
  *
@@ -50,7 +51,7 @@ public class User extends Model {
     public User(String name,String email, String password) {
         this.name = name;
         this.email = email;
-        this.password = password;
+        this.password = Crypto.passwordHash(password);
     }
 
     public TimeSlice getActiveTimeSlice() {

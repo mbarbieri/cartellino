@@ -1,6 +1,7 @@
 
 import controllers.Secure;
 import models.User;
+import play.libs.Crypto;
 
 /*
  *  Copyright (C) 2010 Matteo Barbieri <barbieri.matteo at gmail.com>
@@ -27,7 +28,7 @@ public class Security extends Secure.Security {
     
     static boolean authenticate(String email, String password) {
         User user = User.find("byEmail", email).first();
-        return user != null && user.password.equals(password);
+        return user != null && user.password.equals(Crypto.passwordHash(password));
     }
     
 }

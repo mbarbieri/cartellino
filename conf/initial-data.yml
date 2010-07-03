@@ -1,8 +1,9 @@
+# Bob's password: pwd
 User(bob):
   name:           Bob
   email:          bob@example.org
-  password:       pwd
-  
+  password:       kAPR3yLrTTggAVBwOFGUyA==
+
 Activity(test):
   name:           Test
   user:           bob

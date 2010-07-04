@@ -28,6 +28,18 @@
     </head>
     <body>
         <div id="main">
+            <div id="top-left-menu">
+                <div id="add-panel" style="float: left;display: none;">
+                    #{form @Application.addActivity()}
+                    <label for="add-activity-input">Name</label>
+                        <input type="text" id="add-activity" name="name"/>
+                        <input type="submit"/>
+                    #{/form}
+                </div>
+                <div style="display: inline">
+                    <img id="add" src="@{'/public/images/square-plus.png'}"/>
+                </div>
+            </div>
             <div id="top-menu">
                 #{a @CRUD.index()}Administration#{/a}
                 #{a @Secure.logout()}Logout#{/a}

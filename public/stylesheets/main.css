@@ -24,6 +24,17 @@ body {
     color: white;
 }
 
+#top-left-menu {
+   position: absolute;
+   left: 0px;
+   top: 0px;
+}
+
+#add-panel {
+    background-color: black;
+    padding: 7px 20px;
+    -webkit-border-radius: 0px 0px 8px 0px;
+}
 .activity {
     float: left;
     margin: 5px;
@@ -53,7 +64,7 @@ body {
     display: table-cell;
     vertical-align: middle;
     text-decoration: none;
-    cursor: pointer;
+    cursor: default;
 }
 
 #counter {
@@ -65,6 +76,7 @@ body {
     width:600px;
     height:100px;   /* Height of the footer */
     background:#6cf;
+    cursor: default;
 }
 
 .countdown_holding span {
@@ -76,4 +88,13 @@ body {
 	float: left;
 	font-size: 1.5em;
 	text-align: center;
+}
+
+input[type=text] {
+    -webkit-border-radius: 4px 4px 4px 4px;
+}
+
+label {
+    color: #999;
+    font-size: 12px;
 }

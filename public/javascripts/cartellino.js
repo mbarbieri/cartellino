@@ -3,9 +3,9 @@ $(document).ready(function(){
     // Initialization
     if(activeStartTime) {
         $('#counter').countdown({since: new Date(activeStartTime), format: 'HMS'});
-        $('#counter').slideDown();
+        $('#counter').show();
     }
-
+    
     stopTimeSlice = function(id) {
         $.post(stopAction(),{activityId: id});
     }
@@ -13,6 +13,10 @@ $(document).ready(function(){
     startTimeSlice = function(id) {
         $.post(startAction(),{activityId: id});
     }
+
+    $('#add').live('click',function() {
+       $("#add-panel").animate({ width: 'show' });
+    });
 
     $('.activity a').live('click',function() {
 

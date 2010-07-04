@@ -52,4 +52,13 @@ public class Application extends Controller {
         }
     }
 
+    public static void addActivity (@Required String name) {
+        if(!validation.hasErrors()) {
+            User user = User.find("byEmail",Security.connected()).first();
+            Activity a = new Activity(user, name);
+            a.save();
+        }
+        index();
+    }
+
 }

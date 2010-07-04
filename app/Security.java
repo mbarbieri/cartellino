@@ -1,4 +1,5 @@
 
+import controllers.Application;
 import controllers.Secure;
 import models.User;
 import play.libs.Crypto;
@@ -30,5 +31,5 @@ public class Security extends Secure.Security {
         User user = User.find("byEmail", email).first();
         return user != null && user.password.equals(Crypto.passwordHash(password));
     }
-    
+
 }

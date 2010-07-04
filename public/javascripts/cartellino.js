@@ -14,7 +14,7 @@ $(document).ready(function(){
         $.post(startAction(),{activityId: id});
     }
 
-    $('a').click(function() {
+    $('.activity a').live('click',function() {
 
         // if active, stop the counter and deselect
         if($(this).parent().hasClass('active')) {
